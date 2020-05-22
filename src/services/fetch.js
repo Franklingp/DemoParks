@@ -2,15 +2,13 @@ import { config } from '../config';
 const { url, key } = config;
 
 //Metodo para obtener los parkes de la api
-
 export const getParks = async () => {
     const response = await api("GET", `/parks?api_key=${key}&limit=10&stateCode=DC`, null);
     const json = await response.json();
-    console.log(json);
+    return json.data;
 }
 
 //Metodo reusable para hacer peticiones fetch a un api
-
 const api = async (method, route, body) => {
     try{
         if(body !== null){
