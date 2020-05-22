@@ -1,4 +1,10 @@
 .img-card{
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    float: left;
+}
+
+.card{
+    min-height: 170px;
 }

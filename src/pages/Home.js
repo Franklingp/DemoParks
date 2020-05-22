@@ -22,14 +22,16 @@ class Home extends React.Component {
     }
 
     render(){
-        console.log(this.state.parks);
         return(
             <section className="container">
                 <section className="list-card">
                     {
                         this.state.parks.length !== 0 &&
                         this.state.parks.map(park => (
-                            <CardPark key={park.id} {...park}/>
+                            <React.Fragment key={park.id}>
+                                <CardPark park={park}/>
+                                <hr/>
+                            </React.Fragment>
                         ))
                     }
                 </section>
