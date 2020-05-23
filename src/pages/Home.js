@@ -9,7 +9,8 @@ class Home extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            marker: null
+            marker: null,
+            showMap: false
         }
     }
 
@@ -18,6 +19,12 @@ class Home extends React.Component {
         console.log(data);
         this.setState({
             marker: data
+        })
+    }
+
+    handleMap = () => {
+        this.setState({
+            showMap: !this.state.showMap
         })
     }
 
@@ -39,9 +46,10 @@ class Home extends React.Component {
                         ))
                     }
                 </section>
-                <div className="map-home"> 
+                <div className={this.state.showMap === true ? "map-home show-map" : "map-home"}>
                     <Map marker={this.state.marker}/>
                 </div>
+                <button className="map-button" onClick={this.handleMap}>Map</button>
             </section>
         )
     }

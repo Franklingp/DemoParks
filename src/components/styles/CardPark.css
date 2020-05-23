@@ -8,3 +8,12 @@
 .card{
     min-height: 170px;
 }
+
+@media (max-width: 650px){
+    .img-card{
+        display: block;
+        width: 100%;
+        float: inherit;
+        margin: 0px auto;
+    }
+}
