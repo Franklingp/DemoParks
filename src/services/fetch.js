@@ -3,9 +3,8 @@ const { url, key } = config;
 
 //Metodo para obtener los parkes de la api
 export const getParks = async () => {
-    const response = await api("GET", `/parks?api_key=${key}&limit=10&stateCode=DC`, null);
-    const json = await response.json();
-    return json.data;
+    const response = await api("GET", `/parks?api_key=${key}&limit=3&stateCode=DC`, null);
+    return response;
 }
 
 //Metodo reusable para hacer peticiones fetch a un api
@@ -19,8 +18,9 @@ const api = async (method, route, body) => {
             headers: {},
             body
         }
-        const respoonse = await fetch(url+route, cfg);
-        return respoonse;
+        const response = await fetch(url+route, cfg);
+        const json = await response.json();
+        return json.data;
     }
     catch(error){
         alert("Ha ocurrido un error al intentar realizar la peticion al servidor");

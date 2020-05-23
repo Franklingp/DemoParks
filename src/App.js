@@ -1,22 +1,37 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import './App.css';
+
+//Redux
+import { connect } from 'react-redux';
+import { getPark } from './redux/actions';
 
 //Pages
 import Home from './pages/Home';
 import Details from './pages/Details';
 import NotFound from './pages/NotFound';
 
-function App() {
-  return (
-    <Router> 
-      <Switch>
-        <Route exact path="/details" component={Details}/>
-        <Route exact path="/" component={Home}/>
-        <Route component={NotFound}/>
-      </Switch>
-    </Router>
-  );
+class App extends React.Component {
+
+  async componentDidMount(){
+    await this.props.getPark();
+  }
+
+  render(){
+    return (
+      <Router> 
+        <Switch>
+          <Route exact path="/details" component={Details}/>
+          <Route exact path="/" component={Home}/>
+          <Route component={NotFound}/>
+        </Switch>
+      </Router>
+    );
+  }
 }
 
-export default App;
+//Configuracion para mapear las acciones a las props
+const mapDispatchToProps = {
+  getPark
+}
+
+export default connect(null, mapDispatchToProps)(App);
