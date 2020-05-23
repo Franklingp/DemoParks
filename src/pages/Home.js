@@ -2,11 +2,25 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Map from '../components/Map';
 import CardPark from '../components/CardPark';
-// import { getParks } from '../services/fetch';
 import "./styles/Home.css";
 import { connect } from 'react-redux';
 
 class Home extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            marker: null
+        }
+    }
+
+    handleHoover = (data) => {
+        console.log("evento");
+        console.log(data);
+        this.setState({
+            marker: data
+        })
+    }
+
     render(){
         console.log(this.props);
         const parks = this.props.parks;
@@ -17,14 +31,16 @@ class Home extends React.Component {
                         parks.length !== 0 &&
                         parks.map(park => (
                             <React.Fragment key={park.id}>
-                                <CardPark park={park}/>
+                                <CardPark park={park}
+                                handleHoover={this.handleHoover}
+                                />
                                 <hr/>
                             </React.Fragment>
                         ))
                     }
                 </section>
                 <div className="map-home"> 
-                    <Map/>
+                    <Map marker={this.state.marker}/>
                 </div>
             </section>
         )

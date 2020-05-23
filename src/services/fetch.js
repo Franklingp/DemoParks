@@ -3,7 +3,7 @@ const { url, key } = config;
 
 //Metodo para obtener los parkes de la api
 export const getParks = async () => {
-    const response = await api("GET", `/parks?api_key=${key}&limit=3&stateCode=DC`, null);
+    const response = await api("GET", `/parks?api_key=${key}&limit=5&stateCode=DC`, null);
     return response;
 }
 

@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 import "./styles/Map.css";
 
 const MapComponent = (props) => {
+    const active = props.marker;
 
     return (
         <Map center={[38.916554,-77.025977]} zoom={12}>
             <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            />
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'/>
             
             {
                 props.parks.length !== 0 &&
@@ -20,7 +20,12 @@ const MapComponent = (props) => {
                     />
                 ))
             }
-
+            {
+                active !== null &&
+                <Popup position={[active.latitude, active.longitude]}>
+                    <span>{active.name}</span>                    
+                </Popup>
+            }
         </Map>
     )
 }

@@ -10,7 +10,8 @@ const CardPark = (props) => {
     }
 
     return (
-        <article className="card" onClick={handleClick}>
+        <article className="card" onClick={handleClick} 
+        onMouseOver={() => props.handleHoover(props.park)} onMouseLeave={() => props.handleHoover(null)}>
             <img className="img-card" src={images[0].url} alt={images[0].altText}/>
             <h3>{name}</h3>
             <span>{states}</span>
