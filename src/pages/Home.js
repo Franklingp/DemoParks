@@ -35,9 +35,9 @@ class Home extends React.Component {
                         ))
                     }
                 </section>
-                <section className="map-home">
-                    <Map />
-                </section>
+                <div className="map-home"> 
+                    <Map/>
+                </div>
             </section>
         )
     }
