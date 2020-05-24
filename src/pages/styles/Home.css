@@ -23,7 +23,10 @@
     display: none;
     position: fixed;
     bottom: 10px;
-    left: 50vw;
+    margin: 0px auto;
+    width: 100px;
+    height: 24px;
+    border-radius: 6px;
 }
 
 

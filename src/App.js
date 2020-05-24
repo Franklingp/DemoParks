@@ -5,9 +5,14 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getPark } from './redux/actions';
 
+//Components
+import Navbar from './components/Navbar';
+
 //Pages
 import Home from './pages/Home';
 import Details from './pages/Details';
+import Login from './pages/Login';
+import User from './pages/User';
 import NotFound from './pages/NotFound';
 
 class App extends React.Component {
@@ -19,8 +24,11 @@ class App extends React.Component {
   render(){
     return (
       <Router> 
+        <Navbar/>
         <Switch>
           <Route exact path="/details" component={Details}/>
+          <Route exact path="/login" component={Login}/>
+          <Route exact path="/user" component={User}/>
           <Route exact path="/" component={Home}/>
           <Route component={NotFound}/>
         </Switch>
