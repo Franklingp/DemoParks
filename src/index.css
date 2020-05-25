@@ -9,6 +9,12 @@ body {
   color: #212224;
 }
 
+.vector-horizontal{
+  color: #484848;
+   opacity:0.3;
+    margin: 50px;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

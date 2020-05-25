@@ -9,6 +9,7 @@
 
 .main-title{
     font-size: 34px;
+    margin-top: 20px;
     margin-bottom: 50px;
 }
 
@@ -32,6 +33,9 @@
     width: 100px;
     height: 24px;
     border-radius: 6px;
+    background-color: #212224;
+    color: white;
+    border: #212224;
 }
 
 
@@ -43,7 +47,9 @@
     .map-home{
         position: fixed;
         width: 0vw;
+        height: 100vh;
         transition: 200ms;
+        top: 0px;
     }
 
     .map-button{

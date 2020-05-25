@@ -7,6 +7,7 @@ import { getPark } from './redux/actions';
 
 //Components
 import Navbar from './components/Navbar';
+import Loading from './components/Loading';
 
 //Pages
 import Home from './pages/Home';
@@ -23,15 +24,17 @@ class App extends React.Component {
 
   render(){
     return (
-      <Router> 
-        <Navbar/>
-        <Switch>
-          <Route exact path="/details" component={Details}/>
-          <Route exact path="/login" component={Login}/>
-          <Route exact path="/user" component={User}/>
-          <Route exact path="/" component={Home}/>
-          <Route component={NotFound}/>
-        </Switch>
+      <Router>
+        <Loading>
+          <Navbar/>
+          <Switch>
+            <Route exact path="/details" component={Details}/>
+            <Route exact path="/login" component={Login}/>
+            <Route exact path="/user" component={User}/>
+            <Route exact path="/" component={Home}/>
+            <Route component={NotFound}/>
+          </Switch>
+        </Loading>
       </Router>
     );
   }

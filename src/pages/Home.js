@@ -39,13 +39,13 @@ class Home extends React.Component {
                                 <CardPark park={park}
                                 handleHoover={this.handleHoover}
                                 />
-                                <hr style={{color: "#484848", opacity:"0.3", margin: "50px"}}/>
+                                <hr className="vector-horizontal"/>
                             </React.Fragment>
                         ))
                     }
                 </section>
                 <div className={this.state.showMap === true ? "map-home show-map" : "map-home"}>
-                    <Map marker={this.state.marker}/>
+                    <Map marker={this.state.marker} park={null}/>
                 </div>
                 <button className="map-button" onClick={this.handleMap}>Map</button>
             </section>

@@ -1,14 +1,25 @@
 .details{
     margin: 64px;
+    text-align: center;
+    font-size: 18px;
 }
 
 .img-details{
     max-height: 400px;
     max-width: 100%;
+    margin: 24px;
+}
+
+.map-details{
+    width: 100%;
+    height: 400px;
 }
 
 @media (max-width: 650px){
     .details{
         margin: 24px;
+    }
+    .img-details{
+        margin: 24px 0px 24px auto;
     }
 }
