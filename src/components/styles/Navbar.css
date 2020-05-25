@@ -1,6 +1,17 @@
 .navbar{
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
+    align-content: center;
+    background-color: #ccc;
+    height: 48px;
+    padding-left: 32px;
+    padding-right: 32px;
+    font-size: 18px;;
+}
+
+.nav-item{
+    color: #212224;
+    text-decoration: none;
 }

@@ -6,8 +6,8 @@ const Navbar = (props) => {
     return(
         <header>
             <nav className="navbar">
-                <div>Washingtong DC parks</div>
-                <Link to="/login">Login</Link>
+                <Link to="/" className="nav-item">Washingtong DC parks</Link>
+                <Link to="/login" className="nav-item">Login</Link>
             </nav>
         </header>
     )

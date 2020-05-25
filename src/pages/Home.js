@@ -15,8 +15,6 @@ class Home extends React.Component {
     }
 
     handleHoover = (data) => {
-        console.log("evento");
-        console.log(data);
         this.setState({
             marker: data
         })
@@ -29,11 +27,11 @@ class Home extends React.Component {
     }
 
     render(){
-        console.log(this.props);
         const parks = this.props.parks;
         return(
             <section className="container">
                 <section className="list-card">
+                    <h1 className="main-title">Washingtong DC Parks</h1>
                     {
                         parks.length !== 0 &&
                         parks.map(park => (
@@ -41,7 +39,7 @@ class Home extends React.Component {
                                 <CardPark park={park}
                                 handleHoover={this.handleHoover}
                                 />
-                                <hr/>
+                                <hr style={{color: "#484848", opacity:"0.3", margin: "50px"}}/>
                             </React.Fragment>
                         ))
                     }

@@ -7,8 +7,6 @@ export const getParkSuccess = createAction("GET_PARKS");
 export const getPark = () => async (dispatch) => {
     try{
         const response = await getParks();
-        console.log('actions');
-        console.log(response);
         dispatch(getParkSuccess(response));
     }
     catch(error){
