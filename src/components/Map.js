@@ -51,7 +51,7 @@ const MapComponent = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-    parks: state
+    parks: state.parks
 })
 
 export default connect(mapStateToProps)(MapComponent);

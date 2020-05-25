@@ -55,7 +55,7 @@ class Home extends React.Component {
 
 //Configuracion para conectar con redux
 const mapStateToProps = (state) => ({
-    parks: state
+    parks: state.parks
 })
 
 export default connect(mapStateToProps)(withRouter(Home));

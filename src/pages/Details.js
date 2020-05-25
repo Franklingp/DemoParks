@@ -21,7 +21,7 @@ class  Details extends React.Component {
         const { fullName, description, url, images, weatherInfo, states, operatingHours } = this.state.park;
         console.log(this.state.park);
         return(
-            images !== undefined && <section className="details">
+            images !== undefined && <section className="content">
                 <h1>{fullName}</h1>
                 <img src={images[0].url} alt={images[0].altText} className="img-details"/>
                 <p>{description}</p>
@@ -49,6 +49,7 @@ class  Details extends React.Component {
                 <p>{operatingHours[0].description}</p>
 
                 <hr className="vector-horizontal"/>
+                <h3>Map</h3>
                 <div className="map-details">
                     <Map park={this.state.park} marker={null}/>
                 </div>

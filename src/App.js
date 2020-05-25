@@ -3,11 +3,12 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 //Redux
 import { connect } from 'react-redux';
-import { getPark } from './redux/actions';
+import { getPark } from './redux/actions/actionParks';
 
 //Components
 import Navbar from './components/Navbar';
 import Loading from './components/Loading';
+import Auth from './components/Auth';
 
 //Pages
 import Home from './pages/Home';
@@ -30,8 +31,13 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/details" component={Details}/>
             <Route exact path="/login" component={Login}/>
-            <Route exact path="/user" component={User}/>
             <Route exact path="/" component={Home}/>
+
+            {/*Rutas privadas */}
+            <Auth>
+              <Route exact path="/user" component={User}/>
+            </Auth>
+
             <Route component={NotFound}/>
           </Switch>
         </Loading>

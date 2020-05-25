@@ -1,5 +1,5 @@
 import { createAction } from 'redux-actions';
-import { getParks } from '../services/fetch';
+import { getParks } from '../../services/fetch';
 
 //Acciones de redux para gestionar el estado global de los parques
 
