@@ -3,11 +3,14 @@ import { getParks } from '../../services/fetch';
 
 //Acciones de redux para gestionar el estado global de los parques
 
+export const addPark = createAction("ADD_PARKS");
 export const getParkSuccess = createAction("GET_PARKS");
 export const getPark = () => async (dispatch) => {
     try{
-        const response = await getParks();
+        let response = await getParks(1, 5);
         dispatch(getParkSuccess(response));
+        response = await getParks(6, 10);
+        await dispatch(addPark(response));
     }
     catch(error){
         alert("Error al intentar obtener datos de la API");

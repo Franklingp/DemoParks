@@ -10,7 +10,7 @@ class Home extends React.Component {
         super(props);
         this.state = {
             marker: null,
-            showMap: false
+            showMap: window.screen.width > 650 ? true : false
         }
     }
 
@@ -27,6 +27,7 @@ class Home extends React.Component {
     }
 
     render(){
+        //color de airbnb: "#FF385C"
         const parks = this.props.parks;
         return(
             <section className="container">
@@ -44,9 +45,11 @@ class Home extends React.Component {
                         ))
                     }
                 </section>
-                <div className={this.state.showMap === true ? "map-home show-map" : "map-home"}>
-                    <Map marker={this.state.marker} park={null}/>
-                </div>
+                {
+                    this.state.showMap && <div className="map-home">
+                        <Map marker={this.state.marker} park={null}/>
+                    </div>
+                }
                 <button className="map-button" onClick={this.handleMap}>Map</button>
             </section>
         )

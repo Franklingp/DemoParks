@@ -21,6 +21,7 @@
 }
 
 .map-home{
+    width: 100%;
     width: 40vw;
     height: 100%;
 }
@@ -41,13 +42,13 @@
 
 @media (max-width: 650px){
     .list-card{
-        width: 100vw;
+        width: 100%;
         overflow-y: unset;
     }
     .map-home{
         position: fixed;
-        width: 0%;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
         transition: 200ms;
         top: 0px;
     }
@@ -57,7 +58,7 @@
     }
 
     .show-map{
-        transition: 200ms;
-        width: 100%;
+        /* width: 100%;
+        transition: 200ms; */
     }
 }

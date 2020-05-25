@@ -2,8 +2,8 @@ import { config } from '../config';
 const { url, key } = config;
 
 //Metodo para obtener los parkes de la api
-export const getParks = async () => {
-    const response = await api("GET", `/parks?api_key=${key}&limit=5&stateCode=DC`, null);
+export const getParks = async (start, limit) => {
+    const response = await api("GET", `/parks?api_key=${key}&limit=${limit}&stateCode=DC&start=${start}`, null);
     return response;
 }
 
