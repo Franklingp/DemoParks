@@ -41,12 +41,12 @@
 
 @media (max-width: 650px){
     .list-card{
-        width: 90vw;
+        width: 100vw;
         overflow-y: unset;
     }
     .map-home{
         position: fixed;
-        width: 0vw;
+        width: 0%;
         height: 100vh;
         transition: 200ms;
         top: 0px;
@@ -57,7 +57,7 @@
     }
 
     .show-map{
-        width: 100vw;
         transition: 200ms;
+        width: 100%;
     }
 }

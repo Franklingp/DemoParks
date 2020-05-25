@@ -30,8 +30,7 @@ const Login = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            const response = await firebase.auth().signInWithEmailAndPassword(email, password);
-            console.log(response);
+            await firebase.auth().signInWithEmailAndPassword(email, password);
             props.login(email);      
             props.history.push("/user");
         }
