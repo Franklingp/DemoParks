@@ -22,11 +22,9 @@ const MapComponent = (props) => {
     //Este metodo se encarga de controlar el centro del mapa
     useEffect(()=>{
         if(props.park){
-            console.log("park");
             setCenter([props.park.latitude, props.park.longitude]);
         }
         if(hover){
-            console.log("hover");
             setCenter([hover.latitude, hover.longitude]);
         }
     }, [props.park, hover]);

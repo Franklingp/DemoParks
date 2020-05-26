@@ -1,5 +1,6 @@
 import { handleActions } from 'redux-actions';
 
+//Estos son los reducers para llevar el control del estado global de la autenticacion
 const reducerAuth = handleActions({
     LOGIN: (state, {payload}) => {
         const newState = {

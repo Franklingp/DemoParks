@@ -18,41 +18,39 @@ import Login from './pages/Login';
 import User from './pages/User';
 import NotFound from './pages/NotFound';
 
-//Prueba
-import Prueba from './components/Prueba';
-
 //Firebase
 import firebase from 'firebase';
 import "firebase/database";
 
 class App extends React.Component {
 
+  //En esta seccion se esta haciendo una llamada a la base de datos de firebase para obtener
+  //los datos y pasarlos a redux para que esten disponible en toda la aplicacion
   async componentDidMount(){
-    // await this.props.getPark();
-
-
-    const fire = firebase.firestore();
-    const colection = fire.collection("parks");
-    colection.onSnapshot(snapshot => {
-      let parks = []
-      snapshot.forEach(park => {
-        //console.log(park.data());
-        // parks[park.id] = park.data();
-        parks = [...parks, park.data()];
+    try{
+      const fire = firebase.firestore();
+      const colection = fire.collection("parks");
+      colection.onSnapshot(snapshot => {
+        let parks = []
+        snapshot.forEach(park => {
+          parks = [...parks, park.data()];
+        })
+        this.props.getParkSuccess(parks);
       })
-      //console.log(parks);
-      this.props.getParkSuccess(parks);
-    })
+    }
+    catch(error){
+      alert("Hubo un error al intentar obtener los datos del servidor");
+      console.log(error);
+    }
+    
   }
 
   render(){
-    console.log(this.props);
     return (
       <Router>
         <Loading>
           <Navbar/>
           <Switch>
-            <Route exact path="/prueba" component={Prueba}/>
             <Route exact path="/details" component={Details}/>
             <Route exact path="/login" component={Login}/>
             <Route exact path="/" component={Home}/>
@@ -70,7 +68,7 @@ class App extends React.Component {
   }
 }
 
-//Configuracion para mapear las acciones a las props
+//Configuracion para redux
 const mapDispatchToProps = {
   getPark,
   getParkSuccess
