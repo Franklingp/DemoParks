@@ -10,16 +10,19 @@ class Home extends React.Component {
         super(props);
         this.state = {
             marker: null,
-            showMap: window.screen.width > 650 ? true : false
+            showMap: window.screen.width > 650 ? true : false //Esto es para verificar si es mobil o escritorio
         }
     }
 
+    //Este es un metodo que se encarga de captar si se esta haciendo hover en un parque y enviar
+    //los datos al componente Map para actualizar el mapa
     handleHoover = (data) => {
         this.setState({
             marker: data
         })
     }
 
+    //Este metodo se encarga de controlar si se muestra el mapa o si se oculta en modo mobil
     handleMap = () => {
         this.setState({
             showMap: !this.state.showMap
@@ -27,13 +30,13 @@ class Home extends React.Component {
     }
 
     render(){
-        //color de airbnb: "#FF385C"
         const parks = this.props.parks;
         return(
             <section className="container">
                 <section className="list-card">
                     <h1 className="main-title">Washingtong DC Parks</h1>
                     {
+                        //En esta seccion se esta cargando la lista de parques
                         parks.length !== 0 &&
                         parks.map(park => (
                             <React.Fragment key={park.id}>
@@ -46,6 +49,7 @@ class Home extends React.Component {
                     }
                 </section>
                 {
+                    //En esta seccion se esta cargando el componente de mapa
                     this.state.showMap && <div className="map-home">
                         <Map marker={this.state.marker} park={null}/>
                     </div>

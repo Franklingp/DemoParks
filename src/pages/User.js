@@ -10,6 +10,7 @@ import "firebase/auth";
 const User = (props) => {
     const firebase = useFirebaseApp();
 
+    //Este metodo se encarga de cerrar sesion, cierra sesion en el estado local y en el servidor
     const handleClick = async (e) => {
         try{
             await firebase.auth().signOut();

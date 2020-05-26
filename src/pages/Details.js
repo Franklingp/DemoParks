@@ -11,6 +11,8 @@ class  Details extends React.Component {
         }
     }
     
+    //Aqui esta cargando en el estado los datos que fueron pasados de la lista de parques a 
+    //el componente de detalles
     componentDidMount(){
         this.setState({
             park: {...this.props.location.state}
@@ -18,7 +20,6 @@ class  Details extends React.Component {
     }
 
     render(){
-        console.log(this.state);
         const { fullName, description, url, images, weatherInfo, states, operatingHours } = this.state.park;
         return(
             images !== undefined && <section className="content">

@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { useFirebaseApp } from 'reactfire';
 import "firebase/auth";
 
+//redux
 import { login } from '../redux/actions/actionAuth';
 import { connect } from 'react-redux';
 import './styles/Login.css';
@@ -14,6 +15,7 @@ const Login = (props) => {
     const [password, setPassword] = useState("");
     const firebase = useFirebaseApp();
 
+    //Este metodo se encarga de actualizar los datos del formulario con el estado
     const handleChange = e => {
         switch(e.target.name){
             case("email"):
@@ -27,6 +29,8 @@ const Login = (props) => {
         }
     }
 
+    //Este Metodo se encarga de enviar los datos al servidor y enviar al cliente a una nueva
+    //ruta de la aplicacion en caso de que el registro haya sido exitoso
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
