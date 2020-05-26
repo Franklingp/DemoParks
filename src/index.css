@@ -15,6 +15,19 @@ body {
     margin: 50px;
 }
 
+.btn{
+  font-size: 18px;
+  border-radius: 6px;
+  background-color: white;
+  color: #2b83cb;
+  border-color: white;
+  border: 2px solid #2b83cb;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.btn:cli
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
