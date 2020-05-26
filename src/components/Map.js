@@ -17,7 +17,6 @@ const MapComponent = (props) => {
     const handleClick = (data) => {
         data.latitude = Number(data.latitude); 
         data.longitude = Number(data.longitude);
-        console.log(data.longitude);
         setPopup(data);
     }
 
