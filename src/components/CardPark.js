@@ -17,13 +17,13 @@ const CardPark = (props) => {
             <h3>{name}</h3>
             <p>{states}</p>
             <p>{designation}</p>
-            <div className="bold">Addres:</div>
+            <div className="bold">Entradas</div>
             {
                 addresses.map((addres, index) => (
                     <div key={index}>{addres.line1}</div>
                 ))
             }
-            <div><span className="bold">Contact:</span> {phoneNumber}</div>
+            <div><span className="bold">Contacto:</span> {phoneNumber}</div>
         </article>
     )
 }

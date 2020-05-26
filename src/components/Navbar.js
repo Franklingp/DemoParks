@@ -9,10 +9,10 @@ const Navbar = (props) => {
             <nav className="navbar">
                 <Link to="/" className="nav-item">Washingtong DC parks</Link>
                 {
-                    props.auth.isAuth === false && <Link to="/login" className="nav-item ligth">Login</Link>
+                    props.auth.isAuth === false && <Link to="/login" className="nav-item">Login</Link>
                 }
                 {
-                    props.auth.isAuth === true && <Link to="/user" className="nav-item ligth">User</Link>
+                    props.auth.isAuth === true && <Link to="/user" className="nav-item">User</Link>
                 }
             </nav>
         </header>

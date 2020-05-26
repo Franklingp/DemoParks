@@ -46,7 +46,7 @@ const Login = (props) => {
             <form onSubmit={handleSubmit}>
                 <input className="input" type="email" name="email" value={email} onChange={handleChange} placeholder="Email"/>
                 <input className="input" type="password" name="password" value={password} onChange={handleChange} placeholder="Password"/>
-                <input className="btn" type="submit" value="Submit" disabled={!email || !password}/>
+                <input type="submit" value="Submit" disabled={!email || !password}/>
             </form>
         </section>
     )
