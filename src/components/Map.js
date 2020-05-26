@@ -20,6 +20,7 @@ const MapComponent = (props) => {
         props.history.push('/details', popupOnClick);
     }
 
+    //Este metodo se encarga de controlar el centro del mapa
     useEffect(()=>{
         if(props.park){
             console.log("park");
@@ -27,7 +28,7 @@ const MapComponent = (props) => {
         }
         if(hover){
             console.log("hover");
-            setCenter([props.marker.latitude, props.marker.longitude]);
+            setCenter([hover.latitude, hover.longitude]);
         }
     }, [props.park, hover]);
 
