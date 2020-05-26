@@ -20,7 +20,7 @@ const MapComponent = (props) => {
     }
 
     return (
-        <Map center={[38.889993,-76.990332]} zoom={12}>
+        <Map center={props.park ? [props.park.latitude, props.park.longitude] : [38.889993,-76.990332]} zoom={12}>
             <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'/>

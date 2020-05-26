@@ -12,6 +12,7 @@
 
 .card{
     min-height: 170px;
+    cursor: pointer;
 }
 
 @media (max-width: 650px){
