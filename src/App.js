@@ -19,8 +19,7 @@ import User from './pages/User';
 import NotFound from './pages/NotFound';
 
 //Firebase
-import firebase from 'firebase';
-import "firebase/firestore";
+import { firestore } from './config';
 
 class App extends React.Component {
 
@@ -28,15 +27,13 @@ class App extends React.Component {
   //los datos y pasarlos a redux para que esten disponible en toda la aplicacion
   async componentDidMount(){
     try{
-      const fire = firebase.firestore();
-      const colection = fire.collection("parks");
-      colection.onSnapshot(snapshot => {
-        let parks = []
-        snapshot.forEach(park => {
+      let parks = [];
+      await firestore.collection("parks").get().then((snapShot) => {
+        snapShot.forEach((park) => {
           parks = [...parks, park.data()];
-        })
-        this.props.getParkSuccess(parks);
-      })
+        });
+      });
+      this.props.getParkSuccess(parks);
     }
     catch(error){
       alert("Hubo un error al intentar obtener los datos del servidor");
