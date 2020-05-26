@@ -25,11 +25,11 @@ class  Details extends React.Component {
                 <h1>{fullName}</h1>
                 <img src={images[0].url} alt={images[0].altText} className="img-details"/>
                 <p>{description}</p>
-                <p><span className="bold">Estado:</span> {states}</p>
+                <p><span className="bold">State:</span> {states}</p>
                 <br/>
                 <div> 
-                    <span className="bold">Sitio Web: </span> 
-                    <a href={url}>{url}</a>
+                    <span className="bold">Website: </span> 
+                    <a href={url}>Here</a>
                 </div>
                 <hr className="vector-horizontal"/>
                 {
@@ -37,7 +37,7 @@ class  Details extends React.Component {
                     <img src={images[1].url} alt={images[1].altText} className="img-details"/>
                 }
 
-                <h3>Informacion de clima</h3>
+                <h3>Weather Info</h3>
                 <p>{weatherInfo}</p>
                 <hr className="vector-horizontal"/>
                 {
@@ -45,11 +45,11 @@ class  Details extends React.Component {
                     <img src={images[2].url} alt={images[2].altText} className="img-details"/>
                 }
 
-                <h3>Horas de operacion</h3>
+                <h3>Operating Hours</h3>
                 <p>{operatingHours[0].description}</p>
 
                 <hr className="vector-horizontal"/>
-                <h3>Map</h3>
+                <h2>Map</h2>
                 <div className="map-details">
                     <Map park={this.state.park} marker={null}/>
                 </div>

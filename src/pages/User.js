@@ -26,8 +26,10 @@ const User = (props) => {
     return (
         <section>
             <h1> User </h1>
-            <p>Bienvenido, gracias por iniciar sesion. Tu email de registro es: {props.auth.user}</p>
-            <button onClick={handleClick}>Logout</button>
+            <p>
+                Bienvenido, gracias por iniciar sesion. Tu email de registro es: <span style={{color: "#2b82cb"}}>{props.auth.user}</span>
+            </p>
+            <button className="btn" onClick={handleClick}>Logout</button>
         </section>
     )   
 }
