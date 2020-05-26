@@ -8,9 +8,16 @@ const MapComponent = (props) => {
     const [popupOnClick, setPopup] = useState(null);
     const [center, setCenter] = useState([38.889993,-76.990332]);
     var hover = props.marker;
+    if(hover){
+        hover.latitude = Number(hover.latitude);
+        hover.longitude = Number(hover.longitude);
+    }
 
     //Metodo para gestionar cuando se le da click a un marcador
-    const handleClick = (data) => { 
+    const handleClick = (data) => {
+        data.latitude = Number(data.latitude); 
+        data.longitude = Number(data.longitude);
+        console.log(data.longitude);
         setPopup(data);
     }
 
@@ -58,7 +65,7 @@ const MapComponent = (props) => {
               
              {   //Este es el popup que se abre cuando haces click en un punto
                 popupOnClick !== null &&
-                <Popup position={[popupOnClick.latitude, popupOnClick.longitude]}
+                <Popup position={[popupOnClick.latitude+0.0001, popupOnClick.longitude]}
                 onClose={() => setPopup(null)}>
                     <span style={{cursor: "pointer"}} className="highlight" onClick={handlePush}>
                         {popupOnClick.name}
@@ -68,7 +75,7 @@ const MapComponent = (props) => {
             {
                 //Este popup es el que se are cuando se hace un hover en la lista de parques
                 hover !== null &&
-                <Popup position={[hover.latitude, hover.longitude]}>
+                <Popup position={[hover.latitude+0.008, hover.longitude+0.0001]}>
                     <span>{hover.name}</span>                    
                 </Popup>
             }

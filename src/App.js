@@ -20,7 +20,7 @@ import NotFound from './pages/NotFound';
 
 //Firebase
 import firebase from 'firebase';
-import "firebase/database";
+import "firebase/firestore";
 
 class App extends React.Component {
 

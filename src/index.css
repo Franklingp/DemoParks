@@ -9,6 +9,10 @@ body {
   color: #212224;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .vector-horizontal{
   color: #484848;
    opacity:0.3;
