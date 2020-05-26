@@ -4,7 +4,7 @@ import './styles/CardPark.css';
 
 const CardPark = (props) => {
     const {name, states, images, designation, addresses, contacts } = props.park;
-    let phoneNumber = "";
+    let phoneNumber = contacts.phoneNumbers[0].phoneNumber;
     if(phoneNumber){
         phoneNumber = contacts.phoneNumbers[0].phoneNumber;
     }
@@ -12,20 +12,12 @@ const CardPark = (props) => {
     const handleClick = () => {
         props.history.push("/details",props.park);
     }
-    
-    //console.log(images);
-    if(images.length === 0){
-        console.log("ojo con este");
-        console.log(props.park);
-    }
 
     return (
         <article className="card" onClick={handleClick} 
         onMouseOver={() => props.handleHoover(props.park)} onMouseLeave={() => props.handleHoover(null)}>
             
-            {
-                <img className="img-card" src={images[0].url} alt={images[0].altText}/>
-            }
+            <img className="img-card" src={images[0].url} alt={images[0].altText}/>
 
             <h3>{name}</h3>
             <p>{states}</p>

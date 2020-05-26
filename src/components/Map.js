@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 import { connect } from 'react-redux';
 import "./styles/Map.css";
@@ -6,8 +6,9 @@ import "./styles/Map.css";
 import { withRouter } from 'react-router-dom';
 
 const MapComponent = (props) => {
-    var active = props.marker;
     const [popupOnClick, setPopup] = useState(null);
+    const [center, setCenter] = useState([38.889993,-76.990332]);
+    var hover = props.marker;
 
     //Metodo para gestionar cuando se le da click a un marcador
     const handleClick = (data) => { 
@@ -19,8 +20,19 @@ const MapComponent = (props) => {
         props.history.push('/details', popupOnClick);
     }
 
+    useEffect(()=>{
+        if(props.park){
+            console.log("park");
+            setCenter([props.park.latitude, props.park.longitude]);
+        }
+        if(hover){
+            console.log("hover");
+            setCenter([props.marker.latitude, props.marker.longitude]);
+        }
+    }, [props.park, hover]);
+
     return (
-        <Map center={props.park ? [props.park.latitude, props.park.longitude] : [38.889993,-76.990332]} zoom={12}>
+        <Map center={center} zoom={12}>
             <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'/>
@@ -57,9 +69,9 @@ const MapComponent = (props) => {
             }
             {
                 //Este popup es el que se are cuando se hace un hover en la lista de parques
-                active !== null &&
-                <Popup position={[active.latitude, active.longitude]}>
-                    <span>{active.name}</span>                    
+                hover !== null &&
+                <Popup position={[hover.latitude, hover.longitude]}>
+                    <span>{hover.name}</span>                    
                 </Popup>
             }
         </Map>
