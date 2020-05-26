@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 class Auth extends React.Component {
 
+    //El objetivo de este componente es hacer de interceptor, si el usuario no esta registrado e 
+    //intenta acceder a una ruta privada entonces lo redirige al componente Login
     componentDidMount(){
         if(this.props.auth.isAuth !== true){
             alert("Debe iniciar sesion para tener acceso a esta pagina");

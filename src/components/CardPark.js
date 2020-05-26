@@ -5,10 +5,8 @@ import './styles/CardPark.css';
 const CardPark = (props) => {
     const {name, states, images, designation, addresses, contacts } = props.park;
     let phoneNumber = contacts.phoneNumbers[0].phoneNumber;
-    if(phoneNumber){
-        phoneNumber = contacts.phoneNumbers[0].phoneNumber;
-    }
 
+    //Metodo que se encarga de redireccionar al usuario si hace click en un parque de la lista
     const handleClick = () => {
         props.history.push("/details",props.park);
     }

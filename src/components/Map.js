@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 import { connect } from 'react-redux';
 import "./styles/Map.css";
-
 import { withRouter } from 'react-router-dom';
 
 const MapComponent = (props) => {

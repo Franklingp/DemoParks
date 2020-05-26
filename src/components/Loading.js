@@ -4,6 +4,8 @@ import "./styles/Loading.css";
 
 const Loading = (props) => {
 
+    //Este componente se encarga de mostrar una animacion de carga mientras los llegan los datos
+    //de la api a la aplicacion
     return(
         <React.Fragment>
             { 
