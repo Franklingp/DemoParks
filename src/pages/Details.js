@@ -18,6 +18,7 @@ class  Details extends React.Component {
     }
 
     render(){
+        console.log(this.state);
         const { fullName, description, url, images, weatherInfo, states, operatingHours } = this.state.park;
         return(
             images !== undefined && <section className="content">

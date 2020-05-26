@@ -1,9 +1,17 @@
 import { config } from '../config';
 const { url, key } = config;
 
+//Firebase
+// import firebase from 'firebase';
+// import "firebase/database";
+
+// const fire = firebase.firestore();
+// const colection = fire.collection("parks");
+
 //Metodo para obtener los parkes de la api
 export const getParks = async (start, limit) => {
     const response = await api("GET", `/parks?api_key=${key}&limit=${limit}&stateCode=DC&start=${start}`, null);
+    // const response = await api("GET", `/parks?api_key=${key}&stateCode=DC&start=${start}`, null);
     return response;
 }
 
