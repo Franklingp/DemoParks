@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 class Auth extends React.Component {
 
     componentDidMount(){
-        console.log(this.props);
         if(this.props.auth.isAuth !== true){
             alert("Debe iniciar sesion para tener acceso a esta pagina");
             this.props.history.push("/login");
