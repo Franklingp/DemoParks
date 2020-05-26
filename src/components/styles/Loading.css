@@ -1,12 +1,12 @@
 .content-loading{
-    padding: 100px;
-    width: 100vw;
-    height: 100vh;
+  margin: 0px auto;
+  position: relative;
+  top: 20vh;
 }
 
 .loader {
   margin: 100px auto;
-  font-size: 25px;
+  font-size: 32px;
   width: 1em;
   height: 1em;
   border-radius: 50%;
