@@ -19,7 +19,6 @@ class  Details extends React.Component {
 
     render(){
         const { fullName, description, url, images, weatherInfo, states, operatingHours } = this.state.park;
-        console.log(this.state.park);
         return(
             images !== undefined && <section className="content">
                 <h1>{fullName}</h1>
@@ -29,7 +28,7 @@ class  Details extends React.Component {
                 <br/>
                 <div> 
                     <span className="bold">Website: </span> 
-                    <a href={url}>Here</a>
+                    <a href={url} className="highlight">Here</a>
                 </div>
                 <hr className="vector-horizontal"/>
                 {

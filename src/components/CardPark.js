@@ -10,11 +10,6 @@ const CardPark = (props) => {
         props.history.push("/details",props.park);
     }
 
-    if(name === "Capitol Hill Parks"){
-        console.log(props.park);
-
-    }
-
     return (
         <article className="card" onClick={handleClick} 
         onMouseOver={() => props.handleHoover(props.park)} onMouseLeave={() => props.handleHoover(null)}>

@@ -7,7 +7,7 @@ const Navbar = (props) => {
     return(
         <header>
             <nav className="navbar">
-                <Link to="/" className="nav-item">Washingtong DC parks</Link>
+                <Link to="/" className="nav-item">Washington DC</Link>
                 {
                     props.auth.isAuth === false && <Link to="/login" className="nav-item ligth">Login</Link>
                 }
