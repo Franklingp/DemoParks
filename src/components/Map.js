@@ -11,7 +11,7 @@ const MapComponent = (props) => {
         setPopup(data);
     }
     return (
-        <Map center={props.park ? [props.park.latitude, props.park.longitude] : [38.916554,-77.025977]} zoom={12}>
+        <Map center={[38.889993,-76.990332]} zoom={12}>
             <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'/>
